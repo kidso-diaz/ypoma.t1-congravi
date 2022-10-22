@@ -257,66 +257,84 @@ void imprimirZonaInferior()
 		X0 + B,
 		Y0 + H1 - (Q2 + B),
 		PX - 2 * B,
-		Q2);
+		Q2
+	);
 
 	// Rectangulo interior derecho
 	crearRectanguloDesdeOrigen(
 		X0 + L - B - P2,
 		Y0 + H1 - (Q2 + B),
 		PX - 2 * B,
-		Q2);
+		Q2
+	);
 
+	// Isla A1
 	islaTipoA1(
 		X0 + B + C,
 		Y0 + B + C
 	);
+
+	// Isla A2
 	islaTipoA2(
 		X0 + B + C + C + B + C + B + C + C + B + C,
 		Y0 + B + C
 	);
 
+	// Isla B (inferior)
 	islaTipoB(
 		X0 + B + C + C + B + C + B + C,
 		Y0 + B + C + B + C + B
-	); // "T" inferior
+	);
+
+	// Isla B (superior)
 	islaTipoB(
 		X0 + B + C + C + B + C + B + C,
 		Y0 + B + C + B + C + B + C + B + C + B
-	); // "T" superior
+	);
 
+	// Isla C1
 	islaTipoC1(
 		X0 + B + C,
 		Y0 + B + C + B + C + B + C + B
 	);
+
+	// Isla C2
 	islaTipoC2(
 		X0 + B + C + C + B + C + B + C + C + B + C + C + B + C,
 		Y0 + B + C + B + C + B + C + B
 	);
 
+	// Rectangulo D1 (izquierda)
 	crearRectanguloDesdeOrigen(
 		X0 + B + C + C + B + C,
 		Y0 + B + C + B + C + B + C,
 		B + C,
 		B
-	); // D1 izquierda
+	);
+
+	// Rectangulo D1 (derecha)
 	crearRectanguloDesdeOrigen(
 		X0 + B + C + C + B + C + B + C + C + B + C,
 		Y0 + B + C + B + C + B + C,
 		B + C,
 		B
-	); // D1 derecha
+	);
+
+	// Rectangulo D2 (izquierda)
 	crearRectanguloDesdeOrigen(
 		X0 + B + C + C + B + C,
 		Y0 + B + C + B + C + B + C + B + C,
 		B,
 		QX
-	); // D2 izquierda
+	);
+
+	// Rectangulo D2 (derecha)
 	crearRectanguloDesdeOrigen(
 		X0 + B + C + C + B + C + B + C + C + B + C + C,
 		Y0 + B + C + B + C + B + C + B + C,
 		B,
 		QX
-	); // D2 derecha
+	);
 }
 
 void imprimirZonaSuperior()
