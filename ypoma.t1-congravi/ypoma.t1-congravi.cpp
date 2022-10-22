@@ -1,12 +1,15 @@
 ﻿#include<GL/glut.h>
 #include <math.h>
 
+// Colores
+#define COLOR_AZUL 0
+
 // Medidas independientes
 #define X0	1.5
 #define Y0	1.5
 
 #define B	1.0 // Borde
-#define C	2.0
+#define C	2.0 // Ancho de camino
 
 #define P1	2.5
 #define P2	4.0
@@ -21,6 +24,16 @@
 #define L	(B + C + P1 + C + P2 + C) + B + (C + P2 + C + P1 + C + B)
 
 #define CANVA_X	L + 2 * X0
+
+void establecerColor(int color)
+{
+	switch (color)
+	{
+	case COLOR_AZUL:
+		glColor3ub(0, 49, 253);
+		break;
+	}
+}
 
 void fondo() {
 	glBegin(GL_POLYGON);
@@ -54,12 +67,17 @@ void moverDerecha(int& xAnterior, int& yAnterior, int movimiento)
 	glVertex2d(xAnterior, yAnterior);
 }
 
+void crearRectangulo(int x1, int y1, int x2, int y2)
+{
+
+}
+
 void bloque1()
 {
 	// Linea 1
 	int x = X0, y = Y0;
 	glBegin(GL_LINE_STRIP);
-	glColor3ub(0, 49, 253); // Color RGB ▲▼◄►
+	establecerColor(COLOR_AZUL);
 
 	// Inicio
 	glVertex2d(x, y);
