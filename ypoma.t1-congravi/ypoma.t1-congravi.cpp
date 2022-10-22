@@ -155,12 +155,29 @@ void islaTipoA1(int xOrigen, int yOrigen)
 	terminarPoligono();
 }
 
+void islaTipoA2(int xOrigen, int yOrigen)
+{
+	// Linea 1
+	int x = xOrigen, y = yOrigen;
+	iniciarPoligono(x, y);
+	moverDerecha(x, y, C + B + C + B + C);
+	moverArriba(x, y, B);
+	moverIzquierda(x, y, C + B + C);
+	moverArriba(x, y, C + B);
+	moverIzquierda(x, y, B);
+	moverAbajo(x, y, B + C);
+	moverIzquierda(x, y, C);
+	moverAbajo(x, y, B);
+	terminarPoligono();
+}
+
 void imprimirMapas()
 {
 	bloque1(X0, Y0);
 	crearRectanguloDesdeOrigen(X0 + B, Y0 + H1 - (Q2 + B), PX - 2 * B, Q2);
 	crearRectanguloDesdeOrigen(X0 + L - (B + C + P1), Y0 + H1 - (Q2 + B), PX - 2 * B, Q2);
 	islaTipoA1(X0 + B + C, Y0 + B + C);
+	islaTipoA2(X0 + B + C + C + B + C + B + C + C + B + C, Y0 + B + C);
 }
 
 void dibujar()
@@ -184,7 +201,7 @@ int main(int argc, char* argv[])
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE);
-	glutInitWindowSize(900, 723);
+	glutInitWindowSize(900, 900);
 	glutInitWindowPosition(0, 0);
 	glutCreateWindow("T1");
 	glutDisplayFunc(dibujar);
