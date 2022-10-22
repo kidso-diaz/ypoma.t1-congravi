@@ -4,6 +4,12 @@
 // Colores
 #define COLOR_AZUL 0
 
+// Direccion
+#define ARRIBA 0
+#define DERECHA 1
+#define ABAJO 2
+#define IZQUIERDA 3
+
 // Medidas independientes
 #define X0	1.5
 #define Y0	1.5
@@ -43,35 +49,40 @@ void fondo() {
 	glEnd();
 }
 
-void moverArriba(int& xAnterior, int& yAnterior, int movimiento)
+void iniciarPoligono(int x, int y)
 {
-	yAnterior += movimiento;
-	glVertex2d(xAnterior, yAnterior);
+	glBegin(GL_LINE_STRIP);
+	glVertex2d(x, y);
 }
 
-void moverAbajo(int& xAnterior, int& yAnterior, int movimiento)
+void moverArriba(int& x, int& y, int movimiento)
 {
-	yAnterior -= movimiento;
-	glVertex2d(xAnterior, yAnterior);
+	y += movimiento;
+	glVertex2d(x, y);
 }
 
-void moverIzquierda(int& xAnterior, int& yAnterior, int movimiento)
+void moverAbajo(int& x, int& y, int movimiento)
 {
-	xAnterior -= movimiento;
-	glVertex2d(xAnterior, yAnterior);
+	y -= movimiento;
+	glVertex2d(x, y);
 }
 
-void moverDerecha(int& xAnterior, int& yAnterior, int movimiento)
+void moverIzquierda(int& x, int& y, int movimiento)
 {
-	xAnterior += movimiento;
-	glVertex2d(xAnterior, yAnterior);
+	x -= movimiento;
+	glVertex2d(x, y);
+}
+
+void moverDerecha(int& x, int& y, int movimiento)
+{
+	x += movimiento;
+	glVertex2d(x, y);
 }
 
 void crearRectanguloDesdeOrigen(int xOrigen, int yOrigen, int base, int altura)
 {
 	int x = xOrigen, y = yOrigen;
-	glBegin(GL_LINE_STRIP);
-	glVertex2d(x, y);
+	iniciarPoligono(x, y);
 	moverDerecha(x, y, base);
 	moverArriba(x, y, altura);
 	moverIzquierda(x, y, base);
@@ -84,7 +95,6 @@ void bloque1(int xOrigen, int yOrigen)
 	// Linea 1
 	int x = xOrigen, y = yOrigen;
 	glBegin(GL_LINE_STRIP);
-	establecerColor(COLOR_AZUL);
 
 	// Inicio
 	glVertex2d(x, y);
@@ -126,6 +136,13 @@ void bloque1(int xOrigen, int yOrigen)
 	glEnd();
 }
 
+void islaTipoA(int xOrigen, int yOrigen)
+{
+	// Linea 1
+	int x = xOrigen, y = yOrigen;
+	glBegin(GL_LINE_STRIP);
+}
+
 void mapas()
 {
 	bloque1(X0, Y0);
@@ -142,6 +159,8 @@ void dibujar() {
 
 	// Figuras
 	fondo();
+
+	establecerColor(COLOR_AZUL);
 	mapas();
 
 	// Destruye
