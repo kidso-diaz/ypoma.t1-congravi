@@ -25,11 +25,13 @@
 // Medidas dependientes
 #define PX	B + P2 + B
 #define QX	B + Q2 + B
+#define QE	C
 
 #define H1	(B + C + B + C + B + C + B + C + B + C)
 #define L	(B + C + P1 + C + P2 + C) + B + (C + P2 + C + P1 + C + B)
 
 #define CANVA_X	L + 2 * X0
+#define CANVA_Y H1 * 2 + QE
 
 /* *** FUNCIONES AUXILIARES *** */
 void establecerColor(int color)
@@ -212,11 +214,18 @@ void islaTipoC2(int xOrigen, int yOrigen)
 }
 
 /* *** FUNCIONES DE MAPA DE ZONA SUPERIOR *** */
-void bloque2()
+void bloque2(int xOrigen, int yOrigen)
 {
+	int x = xOrigen, y = yOrigen;
+	iniciarPoligono(x, y);
+
+	moverArriba(x, y, B + Q2 + B + C + B + C + Q1 + C + B);
+	moverDerecha(x, y, L);
+
+	terminarPoligono();
 }
 
-void imprimirMapas()
+void imprimirZonaInferior()
 {
 	/* *** ZONA INFERIOR *** */
 	bloque1(X0, Y0);
@@ -283,16 +292,24 @@ void imprimirMapas()
 		B,
 		QX
 	); // D2 derecha
+}
 
-	/* *** ZONA SUPERIOR *** */
+void imprimirZonaSuperior()
+{
+	bloque2(X0, Y0 + B + C + B + C + B + C + B + C + QX + QE);
+}
 
+void imprimirMapas()
+{
+	imprimirZonaInferior();
+	imprimirZonaSuperior();
 }
 
 void dibujar()
 {
 	// Previa
 	glLoadIdentity();
-	gluOrtho2D(0, CANVA_X, 0, 28);
+	gluOrtho2D(0, CANVA_X, 0, CANVA_Y);
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	// Figuras
@@ -309,7 +326,7 @@ int main(int argc, char* argv[])
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE);
-	glutInitWindowSize(900, 1000);
+	glutInitWindowSize(900, 900);
 	glutInitWindowPosition(0, 0);
 	glutCreateWindow("T1");
 	glutDisplayFunc(dibujar);
