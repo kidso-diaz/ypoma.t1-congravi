@@ -219,11 +219,15 @@ void imprimirMapas()
 	islaTipoA1(X0 + B + C, Y0 + B + C);
 	islaTipoA2(X0 + B + C + C + B + C + B + C + C + B + C, Y0 + B + C);
 
-	islaTipoB(X0 + B + C + C + B + C + B + C, Y0 + B + C + B + C + B);
-	islaTipoB(X0 + B + C + C + B + C + B + C, Y0 + B + C + B + C + B + C + B + C + B);
+	islaTipoB(X0 + B + C + C + B + C + B + C, Y0 + B + C + B + C + B); // "T" inferior
+	islaTipoB(X0 + B + C + C + B + C + B + C, Y0 + B + C + B + C + B + C + B + C + B); // "T" superior
 
 	islaTipoC1(X0 + B + C, Y0 + B + C + B + C + B + C + B);
 	islaTipoC2(X0 + B + C + C + B + C + B + C + C + B + C + C + B + C, Y0 + B + C + B + C + B + C + B);
+
+	crearRectanguloDesdeOrigen(X0 + B + C + C + B + C, Y0 + B + C + B + C + B + C, B + C, B); // k1
+	crearRectanguloDesdeOrigen(X0 + B + C + C + B + C + B + C + C + B + C, Y0 + B + C + B + C + B + C, B + C, B); // k2
+	crearRectanguloDesdeOrigen(X0 + B + C + C + B + C, Y0 + B + C + B + C + B + C + B + C, B, QX); // k3
 }
 
 void dibujar()
