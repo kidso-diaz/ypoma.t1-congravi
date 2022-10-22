@@ -67,15 +67,22 @@ void moverDerecha(int& xAnterior, int& yAnterior, int movimiento)
 	glVertex2d(xAnterior, yAnterior);
 }
 
-void crearRectangulo(int x1, int y1, int x2, int y2)
+void crearRectanguloDesdeOrigen(int xOrigen, int yOrigen, int base, int altura)
 {
-
+	int x = xOrigen, y = yOrigen;
+	glBegin(GL_LINE_STRIP);
+	glVertex2d(x, y);
+	moverDerecha(x, y, base);
+	moverArriba(x, y, altura);
+	moverIzquierda(x, y, base);
+	moverAbajo(x, y, altura);
+	glEnd();
 }
 
-void bloque1()
+void bloque1(int xOrigen, int yOrigen)
 {
 	// Linea 1
-	int x = X0, y = Y0;
+	int x = xOrigen, y = yOrigen;
 	glBegin(GL_LINE_STRIP);
 	establecerColor(COLOR_AZUL);
 
@@ -121,7 +128,9 @@ void bloque1()
 
 void mapas()
 {
-	bloque1();
+	bloque1(X0, Y0);
+	crearRectanguloDesdeOrigen(X0 + B, Y0 + H1 - (Q2 + B), PX - 2 * B, Q2);
+	crearRectanguloDesdeOrigen(X0 + L - (B + C + P1), Y0 + H1 - (Q2 + B), PX - 2 * B, Q2);
 }
 
 void dibujar() {
