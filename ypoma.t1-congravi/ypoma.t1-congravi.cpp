@@ -221,6 +221,23 @@ void bloque2(int xOrigen, int yOrigen)
 
 	moverArriba(x, y, B + Q2 + B + C + B + C + Q1 + C + B);
 	moverDerecha(x, y, L);
+	moverAbajo(x, y, B + Q2 + B + C + B + C + Q1 + C + B);
+
+	// Gokú
+	moverIzquierda(x, y, PX);
+	moverArriba(x, y, QX);
+	moverDerecha(x, y, PX - B);
+
+	moverArriba(x, y, C + B + C + Q1 + C);
+	moverIzquierda(x, y, C + P1 + C + P2 + C + B);
+
+	// Piccolo
+	moverAbajo(x, y, C + Q1);
+	moverIzquierda(x, y, B);
+	moverArriba(x, y, C + Q1);
+
+	moverIzquierda(x, y, C + P1 + C + P2 + C);
+	moverAbajo(x, y, C + B + C + Q1 + C);
 
 	terminarPoligono();
 }
