@@ -417,6 +417,46 @@ void imprimirMapas()
 	imprimirZonaInferior();
 	imprimirZonaSuperior();
 }
+void pacman() {
+	float radio = 0.71;
+	float cx, cy;
+	glColor3ub(235, 238, 1);
+
+	glBegin(GL_POLYGON);
+	for (double i = 0; i < 3.1416 * 2; i += 0.001) {
+		cx = radio * cos(i);
+		cy = radio * sin(i);
+
+		glVertex2d(cx + 10, cy + 9);
+	}
+
+	glEnd();
+}
+void pacman2() {
+
+	glBegin(GL_POLYGON);
+	glColor3ub(0, 0, 0);
+	glVertex2d(9.85, 9.02);
+	glVertex2d(9.22, 8.2);
+	glVertex2d(9.22, 9.62);
+	glEnd();
+}
+
+void puntos() {
+	glPointSize(5);
+	glBegin(GL_POINTS);
+	glColor3ub(255, 255, 255);
+	glVertex2d(8, 16);
+	glVertex2d(8, 14);
+	glVertex2d(8, 12);
+	glVertex2d(6, 12);
+	glVertex2d(4, 12);
+	glVertex2d(8, 10);
+	glVertex2d(8, 8);
+	glVertex2d(8, 6);
+	
+	glEnd();
+}
 
 void dibujar()
 {
@@ -430,6 +470,10 @@ void dibujar()
 
 	establecerColor(COLOR_AZUL);
 	imprimirMapas();
+
+	pacman();
+	pacman2();
+	puntos();
 
 	// Destruye
 	glFlush();
