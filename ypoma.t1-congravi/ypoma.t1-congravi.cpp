@@ -361,6 +361,31 @@ void imprimirZonaSuperior()
 		PX - 2 * B,
 		Q2
 	);
+
+	// Rectangulo E1
+	crearRectanguloDesdeOrigen(
+		_X0 + B + C,
+		_Y0 + B + C + B + C + B + C - B,
+		PX - (B + C),
+		Q1
+	);
+
+	// Rectangulo E2
+	crearRectanguloDesdeOrigen(
+		_X0 + L - B - C - P1,
+		_Y0 + B + C + B + C + B + C - B,
+		PX - (B + C),
+		Q1
+	);
+	
+	// Rectangulo F1
+	
+	// Rectangulo F2
+	
+	// Rectangulo G1
+	
+	// Rectangulo G2
+
 }
 
 void imprimirMapas()
