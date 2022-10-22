@@ -97,7 +97,6 @@ void crearRectanguloDesdeOrigen(int xOrigen, int yOrigen, int base, int altura)
 
 void bloque1(int xOrigen, int yOrigen)
 {
-	// Linea 1
 	int x = xOrigen, y = yOrigen;
 	iniciarPoligono(x, y);
 
@@ -141,7 +140,6 @@ void bloque1(int xOrigen, int yOrigen)
 
 void islaTipoA1(int xOrigen, int yOrigen)
 {
-	// Linea 1
 	int x = xOrigen, y = yOrigen;
 	iniciarPoligono(x, y);
 	moverDerecha(x, y, C + B + C + B + C);
@@ -157,7 +155,6 @@ void islaTipoA1(int xOrigen, int yOrigen)
 
 void islaTipoA2(int xOrigen, int yOrigen)
 {
-	// Linea 1
 	int x = xOrigen, y = yOrigen;
 	iniciarPoligono(x, y);
 	moverDerecha(x, y, C + B + C + B + C);
