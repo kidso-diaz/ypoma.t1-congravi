@@ -30,7 +30,7 @@
 #define H1	(B + C + B + C + B + C + B + C + B + C)
 #define L	(B + C + P1 + C + P2 + C) + B + (C + P2 + C + P1 + C + B)
 
-#define CANVA_X	L + 2 * X0
+#define CANVA_X	L + QE
 #define CANVA_Y H1 * 2 + QE
 
 /* *** FUNCIONES AUXILIARES *** */
