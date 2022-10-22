@@ -54,7 +54,7 @@ void moverDerecha(int& xAnterior, int& yAnterior, int movimiento)
 	glVertex2d(xAnterior, yAnterior);
 }
 
-void mapas()
+void bloque1()
 {
 	// Linea 1
 	int x = X0, y = Y0;
@@ -99,6 +99,11 @@ void mapas()
 	moverAbajo(x, y, H1);
 
 	glEnd();
+}
+
+void mapas()
+{
+	bloque1();
 }
 
 void dibujar() {
