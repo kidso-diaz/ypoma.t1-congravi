@@ -249,14 +249,17 @@ void bloque2(int xOrigen, int yOrigen)
 
 void imprimirZonaInferior()
 {
-	/* *** ZONA INFERIOR *** */
+	// Borde
 	bloque1(X0, Y0);
 
+	// Rectangulo interior izquierdo
 	crearRectanguloDesdeOrigen(
 		X0 + B,
 		Y0 + H1 - (Q2 + B),
 		PX - 2 * B,
 		Q2);
+
+	// Rectangulo interior derecho
 	crearRectanguloDesdeOrigen(
 		X0 + L - (B + C + P1),
 		Y0 + H1 - (Q2 + B),
@@ -318,7 +321,28 @@ void imprimirZonaInferior()
 
 void imprimirZonaSuperior()
 {
-	bloque2(X0, Y0 + B + C + B + C + B + C + B + C + QX + QE);
+	// Origen relativo
+	int _X0 = X0,
+		_Y0 = Y0 + B + C + B + C + B + C + B + C + QX + QE;
+
+	// Borde
+	bloque2(_X0, _Y0);
+
+	// Rectangulo interior izquierdo
+	crearRectanguloDesdeOrigen(
+		_X0 + B,
+		_Y0 + B,
+		PX - 2 * B,
+		Q2
+	);
+
+	// Rectangulo interior derecho
+	crearRectanguloDesdeOrigen(
+		_X0 + L - B - P2,
+		_Y0 + B,
+		PX - 2 * B,
+		Q2
+	);
 }
 
 void imprimirMapas()
