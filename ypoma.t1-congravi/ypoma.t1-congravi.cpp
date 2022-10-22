@@ -31,6 +31,7 @@
 
 #define CANVA_X	L + 2 * X0
 
+/* *** FUNCIONES AUXILIARES *** */
 void establecerColor(int color)
 {
 	switch (color)
@@ -95,6 +96,7 @@ void crearRectanguloDesdeOrigen(int xOrigen, int yOrigen, int base, int altura)
 	terminarPoligono();
 }
 
+/* *** FUNCIONES DE MAPA DE ZONA INFERIOR *** */
 void bloque1(int xOrigen, int yOrigen)
 {
 	int x = xOrigen, y = yOrigen;
@@ -209,8 +211,12 @@ void islaTipoC2(int xOrigen, int yOrigen)
 	terminarPoligono();
 }
 
+/* *** FUNCIONES DE MAPA DE ZONA SUPERIOR *** */
+
+
 void imprimirMapas()
 {
+	/* *** ZONA INFERIOR *** */
 	bloque1(X0, Y0);
 
 	crearRectanguloDesdeOrigen(X0 + B, Y0 + H1 - (Q2 + B), PX - 2 * B, Q2);
@@ -225,10 +231,13 @@ void imprimirMapas()
 	islaTipoC1(X0 + B + C, Y0 + B + C + B + C + B + C + B);
 	islaTipoC2(X0 + B + C + C + B + C + B + C + C + B + C + C + B + C, Y0 + B + C + B + C + B + C + B);
 
-	crearRectanguloDesdeOrigen(X0 + B + C + C + B + C, Y0 + B + C + B + C + B + C, B + C, B); // k1
-	crearRectanguloDesdeOrigen(X0 + B + C + C + B + C + B + C + C + B + C, Y0 + B + C + B + C + B + C, B + C, B); // k2
-	crearRectanguloDesdeOrigen(X0 + B + C + C + B + C, Y0 + B + C + B + C + B + C + B + C, B, QX); // k3
-	crearRectanguloDesdeOrigen(X0 + B + C + C + B + C + B + C + C + B + C + C, Y0 + B + C + B + C + B + C + B + C, B, QX); // k4
+	crearRectanguloDesdeOrigen(X0 + B + C + C + B + C, Y0 + B + C + B + C + B + C, B + C, B); // D1 izquierda
+	crearRectanguloDesdeOrigen(X0 + B + C + C + B + C + B + C + C + B + C, Y0 + B + C + B + C + B + C, B + C, B); // D1 derecha
+	crearRectanguloDesdeOrigen(X0 + B + C + C + B + C, Y0 + B + C + B + C + B + C + B + C, B, QX); // D2 izquierda
+	crearRectanguloDesdeOrigen(X0 + B + C + C + B + C + B + C + C + B + C + C, Y0 + B + C + B + C + B + C + B + C, B, QX); // D2 derecha
+
+	/* *** ZONA SUPERIOR *** */
+
 }
 
 void dibujar()
