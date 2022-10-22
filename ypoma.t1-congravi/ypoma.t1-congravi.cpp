@@ -41,7 +41,7 @@ void establecerColor(int color)
 	}
 }
 
-void fondo() {
+void imprimirFondo() {
 	glBegin(GL_POLYGON);
 	glColor3ub(160, 0, 0);
 	glVertex2d(0, 28);
@@ -146,25 +146,25 @@ void islaTipoA(int xOrigen, int yOrigen)
 	glBegin(GL_LINE_STRIP);
 }
 
-void mapas()
+void imprimirMapas()
 {
 	bloque1(X0, Y0);
 	crearRectanguloDesdeOrigen(X0 + B, Y0 + H1 - (Q2 + B), PX - 2 * B, Q2);
 	crearRectanguloDesdeOrigen(X0 + L - (B + C + P1), Y0 + H1 - (Q2 + B), PX - 2 * B, Q2);
 }
 
-void dibujar() {
-
+void dibujar()
+{
 	// Previa
 	glLoadIdentity();
 	gluOrtho2D(0, CANVA_X, 0, 28);
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	// Figuras
-	fondo();
+	imprimirFondo();
 
 	establecerColor(COLOR_AZUL);
-	mapas();
+	imprimirMapas();
 
 	// Destruye
 	glFlush();
