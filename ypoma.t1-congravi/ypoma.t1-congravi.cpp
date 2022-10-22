@@ -326,7 +326,7 @@ int main(int argc, char* argv[])
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE);
-	glutInitWindowSize(900, 900);
+	glutInitWindowSize(550, 550);
 	glutInitWindowPosition(0, 0);
 	glutCreateWindow("T1");
 	glutDisplayFunc(dibujar);
