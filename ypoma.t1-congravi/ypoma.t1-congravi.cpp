@@ -410,6 +410,12 @@ void imprimirZonaSuperior()
 		B
 	);
 
+	// Isla B
+	islaTipoB(
+		_X0 + B + C + C + B + C + B + C,
+		_Y0 + B + Q2 + B + C + B
+	);
+
 }
 
 void imprimirMapas()
