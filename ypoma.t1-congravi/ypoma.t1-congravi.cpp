@@ -139,11 +139,20 @@ void bloque1(int xOrigen, int yOrigen)
 	terminarPoligono();
 }
 
-void islaTipoA(int xOrigen, int yOrigen)
+void islaTipoA1(int xOrigen, int yOrigen)
 {
 	// Linea 1
 	int x = xOrigen, y = yOrigen;
-	glBegin(GL_LINE_STRIP);
+	iniciarPoligono(x, y);
+	moverDerecha(x, y, C + B + C + B + C);
+	moverArriba(x, y, B);
+	moverIzquierda(x, y, C);
+	moverArriba(x, y, C + B);
+	moverIzquierda(x, y, B);
+	moverAbajo(x, y, B + C);
+	moverIzquierda(x, y, C + B + C);
+	moverAbajo(x, y, B);
+	terminarPoligono();
 }
 
 void imprimirMapas()
@@ -151,6 +160,7 @@ void imprimirMapas()
 	bloque1(X0, Y0);
 	crearRectanguloDesdeOrigen(X0 + B, Y0 + H1 - (Q2 + B), PX - 2 * B, Q2);
 	crearRectanguloDesdeOrigen(X0 + L - (B + C + P1), Y0 + H1 - (Q2 + B), PX - 2 * B, Q2);
+	islaTipoA1(X0 + B + C, Y0 + B + C);
 }
 
 void dibujar()
