@@ -261,7 +261,7 @@ void imprimirZonaInferior()
 
 	// Rectangulo interior derecho
 	crearRectanguloDesdeOrigen(
-		X0 + L - (B + C + P1),
+		X0 + L - B - P2,
 		Y0 + H1 - (Q2 + B),
 		PX - 2 * B,
 		Q2);
