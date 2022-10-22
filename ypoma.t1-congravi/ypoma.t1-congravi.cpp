@@ -55,6 +55,11 @@ void iniciarPoligono(int x, int y)
 	glVertex2d(x, y);
 }
 
+void terminarPoligono()
+{
+	glEnd();
+}
+
 void moverArriba(int& x, int& y, int movimiento)
 {
 	y += movimiento;
@@ -87,17 +92,15 @@ void crearRectanguloDesdeOrigen(int xOrigen, int yOrigen, int base, int altura)
 	moverArriba(x, y, altura);
 	moverIzquierda(x, y, base);
 	moverAbajo(x, y, altura);
-	glEnd();
+	terminarPoligono();
 }
 
 void bloque1(int xOrigen, int yOrigen)
 {
 	// Linea 1
 	int x = xOrigen, y = yOrigen;
-	glBegin(GL_LINE_STRIP);
+	iniciarPoligono(x, y);
 
-	// Inicio
-	glVertex2d(x, y);
 	moverDerecha(x, y, L);
 	moverArriba(x, y, H1);
 
@@ -133,7 +136,7 @@ void bloque1(int xOrigen, int yOrigen)
 
 	moverAbajo(x, y, H1);
 
-	glEnd();
+	terminarPoligono();
 }
 
 void islaTipoA(int xOrigen, int yOrigen)
