@@ -228,6 +228,7 @@ void imprimirMapas()
 	crearRectanguloDesdeOrigen(X0 + B + C + C + B + C, Y0 + B + C + B + C + B + C, B + C, B); // k1
 	crearRectanguloDesdeOrigen(X0 + B + C + C + B + C + B + C + C + B + C, Y0 + B + C + B + C + B + C, B + C, B); // k2
 	crearRectanguloDesdeOrigen(X0 + B + C + C + B + C, Y0 + B + C + B + C + B + C + B + C, B, QX); // k3
+	crearRectanguloDesdeOrigen(X0 + B + C + C + B + C + B + C + C + B + C + C, Y0 + B + C + B + C + B + C + B + C, B, QX); // k4
 }
 
 void dibujar()
@@ -251,7 +252,7 @@ int main(int argc, char* argv[])
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE);
-	glutInitWindowSize(900, 900);
+	glutInitWindowSize(900, 1000);
 	glutInitWindowPosition(0, 0);
 	glutCreateWindow("T1");
 	glutDisplayFunc(dibujar);
