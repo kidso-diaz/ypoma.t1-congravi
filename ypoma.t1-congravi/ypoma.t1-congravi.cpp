@@ -3,6 +3,7 @@
 
 // Colores
 #define COLOR_AZUL 0
+#define COLOR_VERDE 1
 
 // Direccion
 #define ARRIBA 0
@@ -40,6 +41,9 @@ void establecerColor(int color)
 	{
 	case COLOR_AZUL:
 		glColor3ub(0, 49, 253);
+		break;
+	case COLOR_VERDE:
+		glColor3ub(20, 20, 255);
 		break;
 	}
 }
@@ -209,7 +213,7 @@ void islaTipoB2(int xOrigen, int yOrigen)
 	int x = xOrigen, y = yOrigen;
 	iniciarPoligono(x, y);
 
-
+	moverDerecha(x, y, L);
 
 	terminarPoligono();
 }
@@ -404,7 +408,7 @@ void imprimirZonaSuperior()
 		PX - (B + C),
 		Q1
 	);
-	
+
 	// Rectangulo F1
 	crearRectanguloDesdeOrigen(
 		_X0 + B + C + C + B + C + B + C + C + B + C,
@@ -412,7 +416,7 @@ void imprimirZonaSuperior()
 		P2 - B,
 		Q1
 	);
-	
+
 	// Rectangulo F2
 	crearRectanguloDesdeOrigen(
 		_X0 + B + C + P1 + C + B,
@@ -420,7 +424,7 @@ void imprimirZonaSuperior()
 		B + C,
 		Q1
 	);
-	
+
 	// Rectangulo G1
 	crearRectanguloDesdeOrigen(
 		_X0 + B + C,
@@ -428,7 +432,7 @@ void imprimirZonaSuperior()
 		PX - (B + C),
 		B
 	);
-	
+
 	// Rectangulo G2
 	crearRectanguloDesdeOrigen(
 		_X0 + L - B - C - P1,
@@ -450,6 +454,10 @@ void imprimirZonaSuperior()
 	);
 
 	// Isla B2
+	/*islaTipoB2(
+		_X0 + L - (B + C + P2 + B + C + B),
+		_Y0 + B + Q2 + B + C + B
+	);*/
 }
 
 void imprimirMapas()
