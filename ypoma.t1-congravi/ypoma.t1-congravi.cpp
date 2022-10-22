@@ -28,7 +28,7 @@
 #define QE	C
 
 #define H1	(B + C + B + C + B + C + B + C + B + C)
-#define L	(B + C + P1 + C + P2 + C) + B + (C + P2 + C + P1 + C + B)
+#define L	(B + C + P1 + C + P2 + C) + (C + P2 + C + P1 + C + B)
 
 #define CANVA_X	L + QE
 #define CANVA_Y H1 * 2 + QE
@@ -229,7 +229,7 @@ void bloque2(int xOrigen, int yOrigen)
 	moverDerecha(x, y, PX - B);
 
 	moverArriba(x, y, C + B + C + Q1 + C);
-	moverIzquierda(x, y, C + P1 + C + P2 + C + B);
+	moverIzquierda(x, y, C + P1 + C + P2 + C);
 
 	// Piccolo
 	moverAbajo(x, y, C + Q1);
