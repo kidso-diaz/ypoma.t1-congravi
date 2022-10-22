@@ -451,9 +451,15 @@ void puntos() {
 	glVertex2d(8, 12);
 	glVertex2d(6, 12);
 	glVertex2d(4, 12);
+	glVertex2d(10, 12);
+	glVertex2d(12, 12);
+	glVertex2d(13, 10);//
+	
 	glVertex2d(8, 10);
 	glVertex2d(8, 8);
 	glVertex2d(8, 6);
+    glVertex2d(5.77, 6);
+	glVertex2d(6.87, 6);
 	
 	glEnd();
 }
