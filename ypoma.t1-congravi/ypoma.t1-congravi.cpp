@@ -213,7 +213,14 @@ void islaTipoB2(int xOrigen, int yOrigen)
 	int x = xOrigen, y = yOrigen;
 	iniciarPoligono(x, y);
 
-	moverDerecha(x, y, L);
+	moverDerecha(x, y, B);
+	moverAbajo(x, y, B + C + B + C);
+	moverIzquierda(x, y, B);
+	moverArriba(x, y, C);
+	moverIzquierda(x, y, C);
+	moverArriba(x, y, B);
+	moverDerecha(x, y, C);
+	moverArriba(x, y, B + C);
 
 	terminarPoligono();
 }
@@ -454,10 +461,10 @@ void imprimirZonaSuperior()
 	);
 
 	// Isla B2
-	/*islaTipoB2(
-		_X0 + L - (B + C + P2 + B + C + B),
+	islaTipoB2(
+		_X0 + L - (B + C + P2 + B + C + B) + C,
 		_Y0 + B + Q2 + B + C + B
-	);*/
+	);
 }
 
 void imprimirMapas()
