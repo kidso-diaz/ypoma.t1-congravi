@@ -5,7 +5,7 @@
 #define X0	1.5
 #define Y0	1.5
 
-#define B	1.0
+#define B	1.0 // Borde
 #define C	2.0
 
 #define P1	2.5
@@ -17,7 +17,7 @@
 #define PX	B + P2 + B
 #define QX	B + Q2 + B
 
-#define H1	(B + C + B + C + B + C + B + C + B + C + B)
+#define H1	(B + C + B + C + B + C + B + C + B + C)
 #define L	(B + C + P1 + C + P2 + C) + B + (C + P2 + C + P1 + C + B)
 
 #define CANVA_X	L + 2 * X0
