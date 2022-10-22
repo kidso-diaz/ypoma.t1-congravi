@@ -239,6 +239,11 @@ void bloque2(int xOrigen, int yOrigen)
 	moverIzquierda(x, y, C + P1 + C + P2 + C);
 	moverAbajo(x, y, C + B + C + Q1 + C);
 
+	// Goku
+	moverDerecha(x, y, PX - B);
+	moverAbajo(x, y, QX);
+	moverIzquierda(x, y, PX);
+
 	terminarPoligono();
 }
 
