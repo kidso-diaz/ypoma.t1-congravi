@@ -379,6 +379,12 @@ void imprimirZonaSuperior()
 	);
 	
 	// Rectangulo F1
+	crearRectanguloDesdeOrigen(
+		_X0 + B + C + P1 + C + B,
+		_Y0 + B + C + B + C + B + C - B,
+		P2 - B,
+		Q1
+	);
 	
 	// Rectangulo F2
 	
